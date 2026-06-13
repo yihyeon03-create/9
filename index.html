@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
@@ -16,9 +17,9 @@
       --accent2: #7aa8ff;
       --shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
       --radius: 24px;
-      --slide-padding: 48px;
     }
 
+```
 * { box-sizing: border-box; }
 
 html, body {
@@ -57,7 +58,7 @@ html, body {
   transition: opacity 0.55s ease, transform 0.55s ease;
   overflow: hidden;
 }
-    
+
 .slide.active {
   opacity: 1;
   pointer-events: auto;
@@ -154,20 +155,6 @@ h3 {
   pointer-events: none;
 }
 
-.title-slide .ai-bg::before,
-.title-slide .ai-bg::after {
-  content: "";
-  position: absolute;
-  inset: 18%;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.14);
-}
-
-.title-slide .ai-bg::after {
-  inset: 33%;
-  border-color: rgba(114, 227, 196, 0.32);
-}
-
 .panel {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -188,9 +175,7 @@ h3 {
   width: 100%;
   border-radius: 24px;
   border: 1px solid var(--line);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03)),
-    rgba(255,255,255,0.03);
+  background: rgba(255,255,255,0.96);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -215,7 +200,7 @@ h3 {
   justify-content: center;
   text-align: center;
   padding: 30px;
-  color: var(--muted);
+  color: #526070;
   font-size: 1rem;
   line-height: 1.7;
 }
@@ -224,10 +209,8 @@ h3 {
   height: 68vh;
   max-height: 690px;
   min-height: 420px;
-  width: min(520px, 92vw);
-  margin-left: auto;
-  margin-right: auto;
-  background: rgba(255,255,255,0.96);
+  width: min(560px, 92vw);
+  margin: 20px auto 0;
   padding: 10px;
 }
 
@@ -237,7 +220,7 @@ h3 {
   color: var(--muted);
   font-size: 0.88rem;
   line-height: 1.45;
-  width: min(520px, 92vw);
+  width: min(560px, 92vw);
   margin-left: auto;
   margin-right: auto;
 }
@@ -270,46 +253,6 @@ h3 {
   font-size: 0.95rem;
 }
 
-.compact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-top: 18px;
-}
-
-.compact-card {
-  padding: 16px 18px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  line-height: 1.55;
-  color: var(--muted);
-  min-height: 142px;
-}
-
-.compact-card strong {
-  color: var(--accent);
-  display: block;
-  margin-bottom: 7px;
-  font-size: 1.02rem;
-}
-
-.compact-card span {
-  color: var(--text);
-  font-weight: 700;
-}
-
-.conclusion {
-  margin-top: 16px;
-  padding: 16px 20px;
-  border-left: 4px solid var(--accent);
-  border-radius: 18px;
-  background: rgba(255,255,255,0.05);
-  color: var(--text);
-  line-height: 1.65;
-  font-size: 0.98rem;
-}
-
 .financial-hero {
   display: grid;
   grid-template-columns: 0.82fr 1.18fr;
@@ -322,7 +265,6 @@ h3 {
   height: 60vh;
   max-height: 620px;
   min-height: 420px;
-  background: rgba(255,255,255,0.96);
   padding: 12px;
 }
 
@@ -383,11 +325,23 @@ h3 {
   font-size: 0.93rem;
 }
 
+.conclusion {
+  margin-top: 16px;
+  padding: 16px 20px;
+  border-left: 4px solid var(--accent);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 0.98rem;
+}
+
 .github-layout {
   display: grid;
   grid-template-columns: 0.92fr 1.08fr;
   gap: 24px;
   align-items: stretch;
+  margin-top: 24px;
 }
 
 .link-card a,
@@ -395,11 +349,6 @@ h3 {
   color: #9bd8ff;
   text-decoration: none;
   word-break: break-all;
-}
-
-.link-card a:hover,
-.source a:hover {
-  text-decoration: underline;
 }
 
 .qr-box {
@@ -415,6 +364,13 @@ h3 {
   text-align: center;
   font-size: 0.9rem;
   background: rgba(255,255,255,0.04);
+  padding: 10px;
+}
+
+.qr-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .news-grid {
@@ -430,7 +386,7 @@ h3 {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
   box-shadow: var(--shadow);
-  min-height: 220px;
+  min-height: 210px;
 }
 
 .news-card .date {
@@ -602,8 +558,7 @@ h3 {
   .github-layout,
   .grid-2,
   .stakeholder-grid,
-  .stat-grid,
-  .compact-grid {
+  .stat-grid {
     grid-template-columns: 1fr;
   }
 
@@ -646,7 +601,7 @@ h3 {
     <h2>문제 1번 기사 참고 인포그래픽</h2>
     <p class="subtitle">Tom's Guide 기사에서 제시한 프롬프트 개선 방식을 한국어 인포그래픽으로 정리하였다.</p>
 
-    <div class="image-frame infographic-image" style="margin-top: 20px;" data-fallback="infographic-ko.png 이미지를 이 위치에 배치하세요.">
+    <div class="image-frame infographic-image" data-fallback="infographic-ko.png 이미지를 이 위치에 배치하세요.">
       <img src="infographic-ko.png" alt="문제 1번 기사 참고 한국어 인포그래픽" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
     </div>
 
@@ -663,7 +618,7 @@ h3 {
     <h2>Question 1 Article-Based Infographic</h2>
     <p class="subtitle">This English infographic summarizes the prompt improvement methods introduced in the Tom's Guide article.</p>
 
-    <div class="image-frame infographic-image" style="margin-top: 20px;" data-fallback="infographic-en.png 이미지를 이 위치에 배치하세요.">
+    <div class="image-frame infographic-image" data-fallback="infographic-en.png 이미지를 이 위치에 배치하세요.">
       <img src="infographic-en.png" alt="Article-based English infographic for Question 1" onerror="this.style.display='none'; this.parentElement.classList.add('missing');" />
     </div>
 
@@ -819,7 +774,7 @@ h3 {
     <h2>GitHub Pages 배포 결과</h2>
     <p class="subtitle">개인 GitHub 저장소와 GitHub Pages 링크를 연결해 수업 과제를 웹 형태로 배포한 결과를 정리한 슬라이드다.</p>
 
-    <div class="github-layout" style="margin-top: 24px;">
+    <div class="github-layout">
       <div class="panel link-card">
         <h3>배포 정보</h3>
         <p style="color: var(--muted); line-height: 1.8; margin-top: 10px;">
@@ -830,8 +785,8 @@ h3 {
           <strong>GitHub Pages 링크</strong><br />
           <a href="https://yihyeon03-create.github.io/9/" target="_blank" rel="noopener noreferrer">https://yihyeon03-create.github.io/9/</a>
         </p>
-        <div class="qr-box" style="padding:10px;">
-          <img src="qr.png" alt="QR Code" style="width:100%;height:100%;object-fit:contain;">
+        <div class="qr-box">
+          <img src="qr.png" alt="QR Code">
         </div>
         <p class="small-note">저장소 이름은 <strong>9</strong>로 통일했으며, 실제 배포 주소가 새 탭에서 열리도록 설정했다.</p>
       </div>
