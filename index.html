@@ -19,7 +19,6 @@
       --slide-padding: 48px;
     }
 
-```
 * { box-sizing: border-box; }
 
 html, body {
@@ -47,17 +46,18 @@ html, body {
   inset: 0;
   width: 100vw;
   height: 100vh;
-  padding: var(--slide-padding);
+  padding: 38px 5vw 54px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(24px) scale(0.985);
+  transform: translateY(18px) scale(0.985);
   transition: opacity 0.55s ease, transform 0.55s ease;
   overflow: hidden;
 }
-
+    
 .slide.active {
   opacity: 1;
   pointer-events: auto;
@@ -76,8 +76,9 @@ html, body {
 .content {
   position: relative;
   z-index: 1;
-  width: min(1200px, 100%);
+  width: min(1320px, 90vw);
   margin: 0 auto;
+  transform: translateY(-10px);
 }
 
 h1, h2, h3, h4, p { margin: 0; }
